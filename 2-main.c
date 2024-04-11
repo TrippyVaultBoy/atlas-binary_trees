@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "binary_trees.h"
 
 /**
@@ -11,15 +12,12 @@ int main(void)
     binary_tree_t *root;
 
     root = binary_tree_node(NULL, 98);
-
     root->right = binary_tree_node(root, 12);
-    root->right->right = binary_tree_node(root->right, 6);
-    root->right->right = binary_tree_node(root->right, 16);
-
     root->right = binary_tree_node(root, 402);
-    root->right->right = binary_tree_node(root->right, 256);
-    root->right->right = binary_tree_node(root->right, 512);
-
+    binary_tree_print(root);
+    printf("\n");
+    binary_tree_insert_right(root->right, 54);
+    binary_tree_insert_right(root, 128);
     binary_tree_print(root);
     return (0);
 }
