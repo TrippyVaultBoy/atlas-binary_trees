@@ -18,20 +18,20 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	}
 	else
 	{
-		left = binary_tree_height(tree->left);
-		right = binary_tree_height(tree->right);
+		left = 1 + binary_tree_height(tree->left);
+		right = 1 + binary_tree_height(tree->right);
 
 		if (right > left)
 		{
-			return (right + 1);
+			return (right);
 		}
 		else if (left > right)
 		{
-			return (left + 1);
+			return (left);
 		}
 		else if (right == left)
 		{
-			return (left + 1);
+			return (left);
 		}
 	}
 
